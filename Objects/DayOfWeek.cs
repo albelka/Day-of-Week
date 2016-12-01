@@ -24,7 +24,14 @@ namespace DayFinder.Objects
 
 			string yearEnd = yearString.Substring(2,2);
 			string yearStart = yearString.Substring(0,2);
-			return yearEnd;
+			string yearEndNew = "";
+			if (this.Month == 1 || this.Month == 2)
+			{
+					int yearEndInt = int.Parse(yearEnd);
+					yearEndInt = yearEndInt - 1;
+					yearEndNew = yearEndInt.ToString();
+			}
+			return yearEndNew;
 		}
 	}
 }

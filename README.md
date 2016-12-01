@@ -16,7 +16,6 @@ If month is January or February subtract 1 from the last two digits of year.
 * Input: January 2016
 * Output: January 2015
 
-
 Shift month back by two
 * Input: February = 2
 * Output: February = 12
