@@ -31,7 +31,13 @@ namespace DayFinder.Objects
 					yearEndInt = yearEndInt - 1;
 					yearEndNew = yearEndInt.ToString();
 			}
-			return yearEndNew;
+			this.Month = (this.Month -2) % 12;
+			if(this.Month <= 0)
+			{
+				this.Month += 12;
+			}
+			string monthString = this.Month.ToString();
+			return monthString;
 		}
 	}
 }
