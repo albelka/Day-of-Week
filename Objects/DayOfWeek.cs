@@ -20,9 +20,27 @@ namespace DayFinder.Objects
 		public string DayFinder()
 		{
 			string yearString = this.Year.ToString();
+			string yearEnd = "";
+			string yearStart = "";
+			if(yearString.Length==4)
+			{
+				 yearEnd = yearString.Substring(2,2);
+				 yearStart = yearString.Substring(0,2);
+			}else if(yearString.Length==3)
+			{
+				yearEnd = yearString.Substring(1,2);
+			  yearStart = yearString.Substring(0,1);
+			}else if(yearString.Length==2)
+			{
+				yearEnd = yearString.Substring(0,2);
+				yearStart = "0";
+			}else if(yearString.Length==1)
+			{
+				yearEnd = yearString.Substring(0,1);
+				yearStart = "0";
+			}
 
-			string yearEnd = yearString.Substring(2,2);
-			string yearStart = yearString.Substring(0,2);
+
 			double yearStartInt = int.Parse(yearStart);
 			string yearEndNew = "";
 			string result = "";
@@ -43,17 +61,11 @@ namespace DayFinder.Objects
 			double phrase2 = Math.Floor(yearEndInt/4);
 			double phrase3 = Math.Floor((yearStartInt)/4);
 		  double math = (this.Day + phrase1 + (yearEndInt) + phrase2 + phrase3 - (2*(yearStartInt)))%7;
-			Console.WriteLine("this.Day" + this.Day);
-			Console.WriteLine("this.Month" + this.Month);
-			Console.WriteLine("yearEndInt" + yearEndInt);
-			Console.WriteLine("yearStartInt" + yearStartInt);
-			Console.WriteLine(math);
 
 			if(math < 0)
 			{
 				math +=7;
 			}
-				Console.WriteLine(math);
 				if(math == 0)
 				{
 					result = "Sunday";

@@ -9,21 +9,28 @@
 		<div class="container">
 			<div class="row">
 				<div class="jumbotron">
-					<h1>Check your scrabble word here</h1>
+					<h1>Find the day of the week for any AD date:</h1>
 				</div>
 				<div class="col-md-12">
-					<form  action="index.cshtml" method="post">
+					<form  action="/" method="post">
 						<div class="form-group">
-							<label for="word">Enter a word to find its points</label>
-							<input type="text" name="word" placeholder="enter a word"class="form-control">
+							<label for="day">Enter the day:</label>
+							<input type="number" name="day" placeholder="01"class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="month">Enter the month</label>
+							<input type="number" name="month" placeholder="01"class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="year">Enter the year</label>
+							<input type="number" name="year" placeholder="2000"class="form-control">
 						</div>
 						<button type="submit" name="button">Check word</button>
 					</form>
 					<div >
-						@if(Model["HasWord"]==1)
-						{
-							<p>Your score is: @Model["ScrabbleScore"]</p>
-						}
+
+							<p>Your day is: @Model</p>
+
 					</div>
 
 				</div>
